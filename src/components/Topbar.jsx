@@ -1,5 +1,5 @@
 import React from 'react';
-import { images } from '../assets/assets';
+import { main } from '../assets/assets';
 import { NavLink } from 'react-router-dom';
 
 const NavItem = ({ children }) => (
@@ -14,7 +14,7 @@ const Topbar = ({ setShowLogin }) => {
   return (
     <div className="flex text-white bg-yellow-500 h-20">
       <div className="left flex-1 flex items-center h-full">
-        <img src={images.logo} alt="logo" className="h-4/5 w-auto" />
+        <img src={main.logo} alt="logo" className="h-4/5 w-auto" />
       </div>
       <div className="right flex-1 flex flex-row justify-between items-center p-4">
         {navItems.map((item, index) => (

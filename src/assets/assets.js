@@ -5,3 +5,8 @@ export const images = {
     logo,
     cross_icon
 }
+
+export const main = {
+    logo,
+    cross_icon
+}
