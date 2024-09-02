@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 package-lock.json
 src/assets/images/*
+bun.lockb
