@@ -10,14 +10,14 @@ const Login = ({ setShowLogin }) => {
     event.preventDefault();
     if (email === user.email && password === user.password) {
       localStorage.setItem("token", bearerToken.token);
-      console.log("Login Successfully");
+      alert("Login Successfully");
     } else {
-      console.error("Login Failed");
+      alert("Login Failed");
     }
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 grid place-items-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-60 grid place-items-center z-50 sm:w-full">
       <form
         onSubmit={submitForm}
         className="bg-white p-6 rounded-lg shadow-lg w-[min(23vw,330px)] text-gray-600 flex flex-col gap-6 animate-fadeIn"
@@ -42,7 +42,7 @@ const Login = ({ setShowLogin }) => {
           )}
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Enter email suman@example.com"
             required
             className="outline-none border border-gray-300 p-2 rounded-md"
             value={email}
@@ -50,7 +50,7 @@ const Login = ({ setShowLogin }) => {
           />
           <input
             type="password"
-            placeholder="Enter your password"
+            placeholder="Enter password Suman@123"
             required
             className="outline-none border border-gray-300 p-2 rounded-md"
             value={password}

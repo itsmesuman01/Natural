@@ -22,7 +22,11 @@ const Carasoul = () => {
     <div
       className="relative h-[60vh] bg-cover bg-center bg-no-repeat transition-all duration-1000"
       style={{ backgroundImage: `url(${imageArray[currentIndex]})` }}
-    ></div>
+    >
+      <div className="animate-fadeIn text-white flex justify-content items-center h-full px-10">
+        <h1 className="text-3xl md:text-5xl font-bold">Beautiful Nature</h1>
+      </div>
+    </div>
   );
 };
 
