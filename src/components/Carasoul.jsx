@@ -20,7 +20,7 @@ const Carasoul = () => {
 
   return (
     <div
-      className="relative h-[60vh] bg-cover bg-center bg-no-repeat transition-all duration-1000"
+      className="relative h-[100vh] bg-fixed bg-cover bg-center bg-no-repeat transition-all duration-1000"
       style={{ backgroundImage: `url(${imageArray[currentIndex]})` }}
     >
       <div className="animate-fadeIn text-white flex justify-content items-center h-full px-10">
