@@ -17,10 +17,10 @@ const Login = ({ setShowLogin }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 grid place-items-center z-50 sm:w-full">
+    <div className="fixed inset-0 bg-black bg-opacity-60 grid place-items-center z-50 p-4">
       <form
         onSubmit={submitForm}
-        className="bg-white p-6 rounded-lg shadow-lg w-[min(23vw,330px)] text-gray-600 flex flex-col gap-6 animate-fadeIn"
+        className="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm text-gray-600 flex flex-col gap-6 animate-fadeIn"
       >
         <div className="flex justify-between items-center text-black">
           <h2>{currState}</h2>
@@ -37,14 +37,14 @@ const Login = ({ setShowLogin }) => {
               type="text"
               placeholder="Enter your name"
               required
-              className="outline-none border border-gray-300 p-2 rounded-md"
+              className="outline-none border border-gray-300 p-2 rounded-md w-full"
             />
           )}
           <input
             type="email"
             placeholder="Enter email suman@example.com"
             required
-            className="outline-none border border-gray-300 p-2 rounded-md"
+            className="outline-none border border-gray-300 p-2 rounded-md w-full"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -52,14 +52,14 @@ const Login = ({ setShowLogin }) => {
             type="password"
             placeholder="Enter password Suman@123"
             required
-            className="outline-none border border-gray-300 p-2 rounded-md"
+            className="outline-none border border-gray-300 p-2 rounded-md w-full"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button
           type="submit"
-          className="border-none p-2 rounded-md text-white bg-yellow-500 text-lg cursor-pointer"
+          className="border-none p-2 rounded-md text-white bg-yellow-500 text-lg cursor-pointer w-full"
         >
           {currState === "Sign up" ? "Create Account" : "Login"}
         </button>
@@ -69,7 +69,7 @@ const Login = ({ setShowLogin }) => {
             <p>Terms and the conditions</p>
           </div>
         )}
-        <p>
+        <p className="text-center">
           {currState === "Login" ? (
             <>
               Create a new account?{" "}
