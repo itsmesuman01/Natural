@@ -7,7 +7,7 @@ const Carasoul = () => {
     carasoul.wallpaper_one,
     carasoul.wallpaper_two,
     carasoul.wallpaper_three,
-    // carasoul.wallpaper_four,
+    carasoul.wallpaper_four,
   ];
 
   useEffect(() => {
