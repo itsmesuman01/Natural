@@ -62,6 +62,22 @@ export default {
             content: '"."',
           },
         },
+        slideIn: {
+          "0%": {
+            opacity: "0",
+            // transform: "translateX(-100%)", // SLIDE FROM THE LEFT
+            transform: "translateX(100%)", // SLIED FROM THE RIGHT
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        pulse: {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.25)" },
+          "100%": { transform: "scale(1)" },
+        }
       },
       animation: {
         bounce: "bounce 1s infinite",
@@ -71,6 +87,8 @@ export default {
         fadeInRightToLeft: "fadeInRightToLeft 2s ease-in-out",
         spin: "spin 1s linear infinite",
         dots: "dots 1.5s steps(3, end) infinite",
+        slideIn: "slideIn 1s ease-out",
+        pulse: "pulse 1s infinite"
       },
     },
   },

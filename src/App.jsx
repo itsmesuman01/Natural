@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -13,11 +12,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Loader from "./components/Loader";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [showLogin, setShowLogin] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     setLoading(true);
@@ -26,6 +26,29 @@ function App() {
     }, 2000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Scroll to Top Button visibility state
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      setIsButtonVisible(true);
+    } else {
+      setIsButtonVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -45,6 +68,16 @@ function App() {
               </Routes>
             </div>
             <Footer className="h-12" />
+            {isButtonVisible && (
+              <button
+                className="fixed bottom-7 right-3 text-yellow-500 rounded-full shadow-lg hover:bg-yellow-500 transition-transform transform hover:scale-105 animate-slideIn"
+                onClick={scrollToTop}
+              >
+                <div className="animate-pulse">
+                  <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" />
+                </div>
+              </button>
+            )}
           </div>
         </>
       )}
